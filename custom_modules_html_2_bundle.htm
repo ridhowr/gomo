@@ -1,0 +1,434 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>Webpack bundle</title><script>var EM = { trigger: function() {} };</script></head><body onload="parent.postMessage({name: 'reportHTMLFragmentLoaded', content: document.body.innerHTML}, '*');"><div id="bundleWrapper">
+	
+
+	<div class="templateFragmentC lastPageVisitedPopupC">
+		<div id="lastPageVisitedPopupHolderL" class="XX_COLOUR_SETTING_XX XX_FONT_SIZE_SETTING_XX addColourSettingsBorderC localisationWrapper last-page-modal__content" tabindex="1">
+			<a role="button" id="closeLastPageVisitedPopupL" href="?still" class="addColourSettingsBorderC darkCloseButtonC last-page-modal__close-button" onclick="return EM.trigger('closePopup', {'strPopupID':'lastPageVisited'});" title="LOCALISED_TRANSLATION" data-bind="attr: { title:LAST_PAGE_POPUP_CLOSE_BUTTON_TITLE}"><span class="altColoursCloseCrossC">X</span><span class="closeButtonTextC" data-bind="gomotext: LAST_PAGE_POPUP_CLOSE_BUTTON_TEXT">LOCALISED_TRANSLATION</span></a>
+			<h2 class="last-page-modal__heading" data-bind="gomotext: LAST_PAGE_POPUP_TITLE">LOCALISED_TRANSLATION</h2>
+			<div id="lastPageVisitedContentWrapperL" class="checkScrollingC last-page-modal__location-wrapper">
+				<div class="scrollWrapperC">
+					<p class="gomo-bodyImportedC last-page-modal__prompt" data-bind="gomotext: LAST_PAGE_POPUP_PROMPT">LOCALISED_TRANSLATION</p>
+					<div class="last-page-modal__location">XX_LAST_PAGE_LOCATION_XX</div>
+				</div>
+			</div>
+			<div id="lastLocationControlsWrapperL" class="last-page-modal__controls">
+				<span class="androidZindexFix buttonAssetWrapperC last-page-modal__controls-wrapper">
+					<a role="button" id="lastLocationOkButtonL" class="contentButtonNormC btn btn-default last-page-modal__control last-page-modal__control--ok" href="?still" onclick="return EM.trigger('gotoLastLocation');"><span data-bind="gomotext: LAST_PAGE_POPUP_OK_BUTTON_TEXT">LOCALISED_TRANSLATION</span></a>
+					<a role="button" id="lastLocationCancelButtonL" class="contentButtonNormC btn btn-default last-page-modal__control last-page-modal__control--cancel" href="?still" onclick="return EM.trigger('closePopup', {'strPopupID':'lastPageVisited'});"><span data-bind="gomotext: LAST_PAGE_POPUP_CANCEL_BUTTON_TEXT">LOCALISED_TRANSLATION</span></a>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	
+
+	
+
+	<div class="templateFragmentC groupVariablesRenderArtifactC"><span class="groupVariablesRenderArtifactC XX_VARIABLE_NAME_AS_CLASS_XX">XX_VARIABLE_VALUE_XX</span></div>
+
+	
+
+    
+
+    <div class="templateFragmentC back_generalTemplateC">
+      <a
+        id="{{ prefix }}backButtonL"
+        role="button"
+        href="?still"
+        class="buttonNormC activeButtonC XX_TRANSITION_TYPE_CLASS_XX"
+        onclick="return EM.trigger('navigationAction', 'extra-back');"
+        title="{{{label}}}"
+        ><span class="buttonImageC"></span><span class="buttonTextC">{{{label}}}</span></a
+      >
+    </div>
+
+    
+  
+    
+
+    <div class="templateFragmentC next_generalTemplateC">
+      <a
+        id="{{ prefix }}nextButtonL"
+        role="button"
+        href="?still"
+        class="buttonNormC activeButtonC XX_TRANSITION_TYPE_CLASS_XX"
+        onclick="return EM.trigger('navigationAction', 'extra-next');"
+        title="{{{label}}}"
+        ><span class="buttonImageC"></span><span class="buttonTextC">{{{label}}}</span></a
+      >
+    </div>
+
+    
+  
+	
+
+	<div class="templateFragmentC progress_generalTemplateC">
+		<div id="pageNumberL" class="gomoProgressBar" aria-label="Page count"></div>
+	</div>
+
+
+	<div class="templateFragmentC progressDots_generalTemplateC">
+		{{#dots}}
+			{{#active}}
+				<span class="activeGraphicalPageCountC"></span>
+			{{/active}}
+			{{^active}}
+				<span class="defaultGraphicalPageCountC {{style}}" title="{{title}}" onclick="return EM.trigger('paginationAction', {strType:'internal_link', strAssetID:'{{link}}', domLink:this});"></span>
+			{{/active}}
+		{{/dots}}
+	</div>
+
+	<div class="templateFragmentC progressNumber_generalTemplateC">
+		{{pageNo}}{{seperator}}{{pageOf}}
+	</div>
+
+	
+
+	
+
+	<div class="templateFragmentC userRegistrationPopupC">
+
+		
+		<div class="modal fade" id="userRegistrationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content localisationWrapper">
+		      <div class="modal-header">
+		        <h4 class="modal-title" data-bind="gomotext: USER_REG_POPUP_TITLE">LOCALISED_TRANSLATION</h4>
+		      </div>
+		      <div class="modal-body">
+						<span data-bind="gomotext: USER_REG_POPUP_FIELD_TITLE_EMAIL">LOCALISED_TRANSLATION</span>*<br>
+						<input type="text" name="email" value=""><br><br>
+
+						<span data-bind="gomotext: USER_REG_POPUP_FIELD_TITLE_FIRSTNAME">LOCALISED_TRANSLATION</span>*<br>
+						<input type="text" name="firstname" value=""><br><br>
+
+						<span data-bind="gomotext: USER_REG_POPUP_FIELD_TITLE_SURNAME">LOCALISED_TRANSLATION</span>*<br>
+						<input type="text" name="surname" value=""><br><br>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" id="lastLocationOkButtonL" class="btn btn-primary" onclick="USER_REGISTRATION_EXTRA.submitUserRegistration(); return false;" data-bind="gomotext: USER_REG_POPUP_SUBMIT_BUTTON">LOCALISED_TRANSLATION</button>
+						<div class="feedback"></div>
+				  </div>
+		    </div>
+		  </div>
+		</div>
+
+	</div>
+
+	
+
+    
+
+    <div class="templateFragmentC tableOfContentsPopupC">
+      <div
+        id="YY_PREFIX_000_00_YYtableOfContentsPopupHolderL"
+        class="XX_COLOUR_TABLEOFCONTENTS_XX XX_FONT_SIZE_TABLE_OF_CONTENTS_XX addColourTableofContentsBorderC genericPopupWrapperC localisationWrapper"
+        tabindex="-1"
+        role="dialog"
+      >
+        <a
+          id="YY_PREFIX_000_00_YYcloseTableOfContentsPopupL"
+          href="?still"
+          class="addColourTableofContentsBorderC darkCloseButtonC"
+          onclick="return EM.trigger('closePopup', {'strPopupID':'tableOfContents'});"
+          title="LOCALISED_TRANSLATION"
+          data-bind="attr: { title:TABLE_OF_CONTENTS_POPUP_CLOSE_BUTTON_TITLE}"
+          ><span class="altColoursCloseCrossC">X</span
+          ><span
+            class="closeButtonTextC"
+            data-bind="gomotext: TABLE_OF_CONTENTS_POPUP_CLOSE_BUTTON_TEXT"
+            >LOCALISED_TRANSLATION</span
+          ></a
+        >
+        <h2 data-bind="gomotext: TABLE_OF_CONTENTS_POPUP_TITLE">LOCALISED_TRANSLATION</h2>
+        <div id="YY_PREFIX_000_00_YYtableOfContentsContentWrapperL" class="checkScrollingC">
+          <div class="scrollWrapperC">XX_CONTENT_ITEMS_XX</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="templateFragmentC tableOfContentsItemC">
+      <a
+        id="YY_PREFIX_000_00_YYtableOfContentsItem_XX_TABLE_OF_CONTENTS_NAME_ID_SAFE_XX_ButtonL"
+        class="tableOfContentsItemC XX_TABLE_OF_CONTENTS_CLASS_XX"
+        href="?still"
+        onclick="return EM.trigger('tableOfContentAction',{strType:'buttonText', strTargetID:'XX_SCREEN_ID_XX', domLink:this})"
+        ><span>XX_TABLE_OF_CONTENTS_NAME_XX</span></a
+      >
+    </div>
+
+    <div class="templateFragmentC tableOfContents_generalTemplateC">
+      <a
+        id="tableOfContentsL"
+        href="?still"
+        role="button"
+        class="buttonNormC activeButtonC"
+        onclick="EM.trigger('preNavigate', 'tableOfContents'); return EM.trigger('popupButtonClicked', {'strPopupID':'tableOfContents', 'strInsertionWrapper': 'outerPopupWrapperL'})"
+        title="{{{label}}}"
+        aria-expanded="false"
+        aria-haspopup="dialog"
+        ><span class="buttonImageC">XX_SVG_ICON_XX</span
+        ><span class="buttonTextC">{{{label}}}</span></a
+      >
+    </div>
+
+    
+  
+    
+
+    <div class="templateFragmentC exit_generalTemplateC">
+      <a
+        id="{{prefix}}exitL"
+        href="?still"
+        role="button"
+        class="buttonNormC activeButtonC"
+        onclick="EM.trigger('preNavigate', 'exit'); return EM.trigger('exit')"
+        title="{{{label}}}"
+        ><span class="buttonImageC">XX_SVG_ICON_XX</span
+        ><span class="buttonTextC">{{{label}}}</span></a
+      >
+    </div>
+
+    
+  
+	
+
+	
+	<div class="templateFragmentC imagehotspotAssetTemplateWrapperC">
+		<div id="YY_PREFIX_000_00_YYimagehotspotAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC imageHotspotAssetWrapperC nonSettingsElementC XX_ALIGNMENT_CLASS_XX">
+				<span class="imageHotspotAssetInnerWrapperC">
+					<img src="resources/trans.gif?" title="XX_TEXT_XX" alt="XX_TEXT_XX" class="imageHotspotAssetC" data-bind="attr: { src:renderPrimary.strSrc, alt:renderPrimary.strAltText, title:renderPrimary.strAltText}"/>
+					XXIMAGE_HOTSPOTSXX
+				</span>
+			</div>
+	</div>
+
+		<div class="templateFragmentC imagehotspotAssetHotspotTemplateWrapperC">
+			<a id="YY_PREFIX_000_00_YYimageHotspot_XX_ASSET_ID_XX_XX_SUB_ASSET_ID_XX_L" class="hotspotSubAssetC" href="#" onclick="return EM.trigger('showImageHotSpot',{strType:'hotspot', strAssetID:'XX_ASSET_ID_XX', strSubAssetID:'XX_SUB_ASSET_ID_XX', domLink:this, intHotspotIndex:XX_HOTSPOT_INDEX_XX})" title="XX_HOTSPOT_ALT_TEXT_XX" tabindex="XX_TAB_INDEX_XX" data-bind="attr: { title:arrHotspots()[XX_HOTSPOT_INDEX_XX].strText}"><span>XX_HOTSPOT_CONTENT_XX</span></a>
+		</div>
+
+		<div class="templateFragmentC imagehotspotAssetHotspotSpriteWrapperC">
+			<img src="resources/trans.gif?XX_HOTSPOT_SRC_XX" alt="XX_SPRITE_TEXT_XX" class="hotspotSpriteImageC" data-bind="attr: { src:renderSecondaryXX_HOTSPOT_ID_XX.strSrc, alt:renderPrimary.strAltText}"/>
+		</div>
+	
+
+	
+	<div class="templateFragmentC imagestaticAssetTemplateWrapperC">
+		<div id="YY_PREFIX_000_00_YYimagestaticAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC imagestaticAssetWrapperC nonSettingsElementC XX_ALIGNMENT_CLASS_XX">
+			<img src="resources/trans.gif?" title="XXTEXTXX"  alt="XXTEXTXX" class="imageAssetC" data-bind="attr: { alt:renderImage.strAltText, title:renderImage.strAltText, src:renderImage.strSrc}" />
+		</div>
+	</div>
+	
+
+	
+	<div class="templateFragmentC ruleAssetTemplateWrapperC">
+		<hr class="hrAssetC XX_HR_ASSET_SELECTED_STYLE_XX"/>
+	</div>
+	
+
+	
+	
+
+	<div class="templateFragmentC comicstripAssetTemplateWrapperC">
+		<div id="YY_PREFIX_000_00_YYcomicstripAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC XX_FLOW_CLASS_XX">
+			<div id="comicstripAsset_XX_ASSET_ID_XX_ContainerL" class="comicstripContainerC">
+				<div id="comicstripAsset_XX_ASSET_ID_XX_OverlayL" class="comicstripAssetOverlayC comicstripAssetOverlayHiddenC"></div>
+				XX_COMICSTRIP_CELLS_XX
+			</div>
+		</div>
+	</div>
+
+	<div class="templateFragmentC comicstripAssetTemplateWrapperC largeC">
+		<div id="YY_PREFIX_000_00_YYcomicstripAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC XX_FLOW_CLASS_XX">
+			<div id="comicstripAsset_XX_ASSET_ID_XX_ContainerL" class="comicstripContainerC">
+				<div id="comicstripAsset_XX_ASSET_ID_XX_OverlayL" class="comicstripAssetOverlayC comicstripAssetOverlayHiddenC"></div>
+				XX_COMICSTRIP_CELLS_XX
+			</div>
+		</div>
+	</div>
+	
+	<div class="templateFragmentC comicstripAssetTemplateWrapperC smallC">
+		<div id="YY_PREFIX_000_00_YYcomicstripAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC XX_FLOW_CLASS_XX">
+			<div id="comicstripAsset_XX_ASSET_ID_XX_ContainerL" class="comicstripContainerC">
+				<div id="comicstripAsset_XX_ASSET_ID_XX_OverlayL" class="comicstripAssetOverlayC comicstripAssetOverlayHiddenC"></div>
+				XX_COMICSTRIP_CELLS_XX
+			</div>
+		</div>
+	</div>
+
+	<div class="templateFragmentC comicstripCellWrapperC">
+		<div id="comicstripCell_XX_CELL_ID_XX" class="XX_COMICSTRIP_CELL_CLASS_XX comicstripCellClosedC comicStripCellUnvisitedC XX_CELL_PLACEMENT_XX" onkeydown="if (event.which == 13) {EM.trigger('comicstripCellClicked', {strAssetID: 'XX_ASSET_ID_XX', row: XX_CS_ROW_XX, col: XX_CS_COL_XX})};" onclick="EM.trigger('comicstripCellClicked', {strAssetID: 'XX_ASSET_ID_XX', row: XX_CS_ROW_XX, col: XX_CS_COL_XX});">
+			<div class="comicStripBorderHolderC XX_CELL_PLACEMENT_XX">
+				<div class="borderTopC"></div>
+				<div class="borderBottomC"></div>
+				<div class="borderLeftC"></div>
+				<div class="borderRightC"></div>
+			</div>
+			<img id="comicstripCellImg_XX_CELL_ID_XX" src="resources/trans.gif?XX_CELL_SRC_XX" alt="XX_ALTTEXT_XX" data-bind="attr: { src:renderImages()[XX_ARR_NUM_XX].strSrc, alt:renderImages()[XX_ARR_NUM_XX].strAltText}" />
+			<div class="closeComicStripCellCloseC"><a href="?still" onclick="return EM.trigger('comicstripCellClicked', {strAssetID: 'XX_ASSET_ID_XX', row: XX_CS_ROW_XX, col: XX_CS_COL_XX});" ></a></div>
+			<div class="comicstripCellLabelC genericBackgroundColourC">XX_CELL_NUM_XX</div>&nbsp;XX_SUBSCREEN_XX
+		</div>
+	</div>
+
+	<div class="templateFragmentC comicstripCellWrapperC largeC">
+		<div id="comicstripCell_XX_CELL_ID_XX" class="XX_COMICSTRIP_CELL_CLASS_XX comicstripCellClosedC comicStripCellUnvisitedC XX_CELL_PLACEMENT_XX" onkeydown="if (event.which == 13) {EM.trigger('comicstripCellClicked', {strAssetID: 'XX_ASSET_ID_XX', row: XX_CS_ROW_XX, col: XX_CS_COL_XX})};" onclick="EM.trigger('comicstripCellClicked', {strAssetID: 'XX_ASSET_ID_XX', row: XX_CS_ROW_XX, col: XX_CS_COL_XX});">
+			<div class="comicStripBorderHolderC XX_CELL_PLACEMENT_XX">
+				<div class="borderTopC"></div>
+				<div class="borderBottomC"></div>
+				<div class="borderLeftC"></div>
+				<div class="borderRightC"></div>
+			</div>
+			<img id="comicstripCellImg_XX_CELL_ID_XX" src="resources/trans.gif?XX_CELL_SRC_XX" alt="XX_ALTTEXT_XX" data-bind="attr: { src:renderImages()[XX_ARR_NUM_XX].strSrc, alt:renderImages()[XX_ARR_NUM_XX].strAltText}" />
+			<div class="closeComicStripCellCloseC"><a href="?still" onclick="return EM.trigger('comicstripCellClicked', {strAssetID: 'XX_ASSET_ID_XX', row: XX_CS_ROW_XX, col: XX_CS_COL_XX});" ></a></div>
+			<div class="comicstripCellLabelC genericBackgroundColourC">XX_CELL_NUM_XX</div>&nbsp;XX_SUBSCREEN_XX
+		</div>
+	</div>
+
+	<div class="templateFragmentC comicstripCellWrapperC smallC">
+		<div class="smallComicStripWrapperC">
+			
+			<img src="resources/trans.gif?XX_CELL_SRC_XX" class="cellImageC" alt="XX_ALTTEXT_XX" data-bind="attr: { src:renderImages()[XX_ARR_NUM_XX].strSrc, alt:renderImages()[XX_ARR_NUM_XX].strAltText}"/>
+			<div class="comicstripCellLabelC genericBackgroundColourC">XX_CELL_NUM_XX</div>
+			XX_SUBSCREEN_XX
+		</div>
+	</div>
+	<div class="templateFragmentC comicstripCellWrapperC accessibleC">
+		<div class="accessibleComicStripWrapperC">
+			<h2 class="stepHeadingC">Cell XX_CELL_NUM_XX</h2>
+			<img src="resources/trans.gif?XX_CELL_SRC_XX" class="cellImageC" alt="XX_ALTTEXT_XX" data-bind="attr: { src:renderImages()[XX_ARR_NUM_XX].strSrc, alt:renderImages()[XX_ARR_NUM_XX].strAltText}"/>
+			XX_SUBSCREEN_XX
+		</div>
+	</div>
+
+
+	<div class="templateFragmentC comicstripSubScreenWrapperC">
+	  <div id="YY_PREFIX_000_00_YYsubScreenWrapper_XX_SUB_SCREEN_ID_XXL" class="comicstripSubScreenWrapperC genericSubScreenWrapperC comicstripSubscreenHiddenC" data-bind="disableBindings: true"  tabindex="-1">
+      <div id="subScreenContent_XX_SUB_SCREEN_ID_XXL">
+        <h2 class="subScreenTitleC" data-bind="gomotext: arrCells()[XX_ARR_NUM_XX].strTitle">XX_SUB_SCREEN_TITLE_XX</h2>
+        <div class="fakeComicStripCellCloseC"></div>
+        <div class="comicstripSubscreenCellLabelC">XX_CELL_NUM_XX</div>
+        <div id="comicstripSubscreenContent_XX_SUB_SCREEN_ID_XXL" class="comicstripSubscreenContent checkScrollingC">
+          <div class="scrollWrapperC">XX_SUB_SCREEN_CONTENT_XX</div>
+        </div>
+      </div>
+		</div>
+	</div>
+	
+
+	
+
+	<div class="templateFragmentC menuButtonWrapperC">
+		<div id="menubuttonAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC menuButtonAssetWrapperC XX_ALIGNMENT_CLASS_XX buttonStateXX_PROGRESS_XXC">
+			<button type="button" class="buttonC menuButtonC XX_BUTTON_RENDER_TYPE_XX XX_BUTTON_RECOMMENDATION_XX XX_DISABLED_XX" onclick="return EM.trigger('menuButtonAction',{strType:'menuButtonText', strAssetID:'XX_ASSET_ID_XX', domLink:this})">
+				XX_MENU_BUTTON_CONTENT_XX
+			</button>
+		</div>
+	</div>
+
+	<div class="templateFragmentC menuButtonLabelWrapperC">
+		<span class="menuTitleC" data-bind="gomotext: strLabel">XX_TEXTCONTENT_XX</span>
+	</div>
+
+	<div class="templateFragmentC menuButtonTimeWrapperC">
+		<span class="menuTimeC" data-bind="gomotext: strTargetTime">XX_ITEM_TIME_XX</span>
+	</div>
+
+	<div class="templateFragmentC menuButtonImageWrapperC">
+		<span class="menuImageC">XX_IMAGESRC_XX</span>
+	</div>
+
+	<div class="templateFragmentC menuButtonProgressWrapperC">
+		<span class="menuProgressC trackingStateXX_PROGRESS_XXC" aria-label="XX_ACCESSIBILITY_PROGRESS_XX"></span>
+	</div>
+
+	<div class="templateFragmentC menuButtonRecommendationIconWrapperC">
+		<span class="recommendationIcon"></span>
+	</div>
+
+	
+
+	
+
+	
+	<div class="templateFragmentC mcqAssetTemplateWrapperC">
+		<div id="YY_PREFIX_000_00_YYmcqAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC mcqAssetWrapperC XXIMPORTEDSTYLEXX">
+			<div class="mcqOptionsWrapperC" role="group" aria-labelledby="XX_ARIA_LABELLEDBY_XX">XXMCQOPTIONSXX</div>
+			XX_QUESTION_BUTTONS_XX
+		</div>
+	</div>
+
+	<div class="templateFragmentC mcqAssetOptionTemplateWrapperC">
+		<a id="YY_PREFIX_000_00_YYmcqAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXWrapperL" role="radio" aria-checked="false" class="mcqOptionC XX_OPTION_STATE_XX inhibitIScrollForAndroidC" href="?still" onkeydown="gomo.tabManager.questionOptionNav(this, event.keyCode);" onclick="return EM.trigger('mcqOptionClicked',{'strAssetID':'XX_ASSET_ID_XX', 'strOptionIndex':'XXOPTIONNUMXX'})" ><span class="optionSelectionMarkerC"></span><span class="optionText" data-bind="gomotext: arrOptions()[XX_OPTION_XX].strOptionText">XXOPTIONTEXTXX</span> <img id="YY_PREFIX_000_00_YYmcqAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXCorrectnessL" class="correctnessMarkerC unSetCorrectnessC" src="resources/trans.gif?trans.gif" alt=""/></a>
+	</div>
+
+	<div class="templateFragmentC mcqAssetOptionTemplateWrapperC accessibleC">
+		<div id="YY_PREFIX_001_00_YYmcqAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXWrapperL" class="mcqOptionWrapperC">
+			<input id="YY_PREFIX_001_00_YYmcqAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXInputL" name="mcqAsset_XX_ASSET_ID_XX_Option" class="mcqOptionC XX_OPTION_STATE_XX" type="radio" aria-checked="false" onchange="return EM.trigger('mcqOptionClicked',{'strAssetID':'XX_ASSET_ID_XX', 'strOptionIndex':'XXOPTIONNUMXX'})"/>
+			<label for="YY_PREFIX_001_00_YYmcqAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXInputL">XXOPTIONTEXTXX</label>
+			<img id="YY_PREFIX_001_00_YYmcqAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXCorrectnessL" class="correctnessMarkerC unSetCorrectnessC" src="resources/trans.gif?trans.gif" alt=""/>
+		</div>
+	</div>
+
+	
+
+	
+
+	
+	<div class="templateFragmentC sflAssetTemplateWrapperC">
+		<div id="YY_PREFIX_000_00_YYsflAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC sflAssetWrapperC XXIMPORTEDSTYLEXX">
+			<div class="sflOptionsWrapperC" role="group" aria-labelledby="XX_ARIA_LABELLEDBY_XX">XXSFLOPTIONSXX</div>
+			XX_QUESTION_BUTTONS_XX
+		</div>
+	</div>
+
+	<div class="templateFragmentC sflAssetOptionTemplateWrapperC">
+		<a id="YY_PREFIX_000_00_YYsflAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXWrapperL" role="checkbox" aria-checked="false" class="sflOptionC XX_OPTION_STATE_XX inhibitIScrollForAndroidC" href="?still" onkeydown="gomo.tabManager.questionOptionNav(this, event.keyCode);" onclick="return EM.trigger('sflOptionClicked',{'strAssetID':'XX_ASSET_ID_XX', 'strOptionIndex':'XXOPTIONNUMXX'})"><span class="optionSelectionMarkerC"></span><span class="optionText" data-bind="gomotext: arrOptions()[XX_OPTION_XX].strOptionText">XXOPTIONTEXTXX</span> <img id="YY_PREFIX_000_00_YYsflAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXCorrectnessL" class="correctnessMarkerC unSetCorrectnessC" src="resources/trans.gif?trans.gif" alt=""/></a>
+	</div>
+
+	<div class="templateFragmentC sflAssetOptionTemplateWrapperC accessibleC">
+		<div id="YY_PREFIX_001_00_YYsflAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXWrapperL" class="sflOptionWrapperC">
+			<input id="YY_PREFIX_001_00_YYsflAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXInputL" name="sflAsset_XX_ASSET_ID_XX_Option" class="sflOptionC XX_OPTION_STATE_XX" type="checkbox" role="checkbox" aria-checked="false" onchange="return EM.trigger('sflOptionClicked',{'strAssetID':'XX_ASSET_ID_XX', 'strOptionIndex':'XXOPTIONNUMXX'})"/>
+			<label for="YY_PREFIX_001_00_YYsflAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXInputL"><span data-bind="gomotext: arrOptions()[XX_OPTION_XX].strOptionText">XXOPTIONTEXTXX</span></label>
+			<img id="YY_PREFIX_001_00_YYsflAsset_XX_ASSET_ID_XX_OptionXXOPTIONNUMXXCorrectnessL" class="correctnessMarkerC unSetCorrectnessC" src="resources/trans.gif?trans.gif" alt=""/></div>
+	</div>
+
+	
+
+	
+	
+	
+	<div class="templateFragmentC assessmentResultsAssetTemplateWrapperC">
+		<div id="YY_PREFIX_000_00_YYassessmentresultsAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC assessmentResultsAssetWrapperC">
+			<div class="assessmentFeedbackHolderC"></div>
+		</div>
+	</div>
+	
+	
+
+	
+
+	
+	<div class="templateFragmentC textInputAssetTextAreaTemplateWrapperC">
+		<div id="YY_PREFIX_000_00_YYtextinputAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC textInputAssetWrapperC">
+			<div class="textInputWrapperC">
+				<label for="YY_PREFIX_000_00_YYtextInput_XX_ASSET_ID_XX_L" class="screenReaderOnlyElementC">Enter your thoughts:</label>
+				<textarea id="YY_PREFIX_000_00_YYtextInput_XX_ASSET_ID_XX_L" class="textInputAreaC addColourSettingsBorderC keyboardLinkClickableC" onfocus="EM.trigger('textInputRemoveDefaultText', {'_strWhatAssetID': 'XX_ASSET_ID_XX', '_domTextArea': this })" onclick="EM.trigger('textInputRemoveDefaultText', {'_strWhatAssetID': 'XX_ASSET_ID_XX', '_domTextArea': this })" onkeydown="EM.trigger('textInputChangeAttempted', {'_strWhatAssetID': 'XX_ASSET_ID_XX', '_domTextArea': this })" rows="XX_ROW_COUNT_XX" cols="20">XX_DEFAULT_INPUT_TEXT_XX</textarea>
+			</div>
+			XX_QUESTION_BUTTONS_XX
+			<span class="unSetCorrectnessC correctnessMarkerC"></span>
+		</div>
+	</div>
+
+	<div class="templateFragmentC textInputAssetInputTemplateWrapperC">
+		<div id="YY_PREFIX_000_00_YYtextinputAsset_XX_ASSET_ID_XX_WrapperL" class="assetWrapperC textInputAssetWrapperC">
+			<div class="textInputWrapperC">
+				<label for="YY_PREFIX_000_00_YYtextInput_XX_ASSET_ID_XX_L" class="screenReaderOnlyElementC">Enter your thoughts:</label>
+				<input id="YY_PREFIX_000_00_YYtextInput_XX_ASSET_ID_XX_L" class="textInputAreaC addColourSettingsBorderC keyboardLinkClickableC" onfocus="EM.trigger('textInputRemoveDefaultText', {'_strWhatAssetID': 'XX_ASSET_ID_XX', '_domTextArea': this })" onclick="EM.trigger('textInputRemoveDefaultText', {'_strWhatAssetID': 'XX_ASSET_ID_XX', '_domTextArea': this })" onkeydown="EM.trigger('textInputChangeAttempted', {'_strWhatAssetID': 'XX_ASSET_ID_XX', '_domTextArea': this })" cols="20" value="XX_DEFAULT_INPUT_TEXT_XX" data-bind="value:strInitialText" />
+			</div>
+			XX_QUESTION_BUTTONS_XX
+			<span class="unSetCorrectnessC correctnessMarkerC"></span>
+		</div>
+	</div>
+
+	
+</div></body></html>

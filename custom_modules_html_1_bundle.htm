@@ -1,0 +1,160 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>Webpack bundle</title><script>var EM = { trigger: function() {} };</script></head><body onload="parent.postMessage({name: 'reportHandlebarsHTMLFragmentLoaded', content: document.body.innerHTML, ids: ['text','button','image-markers','carousel','likert']}, '*');"><div id="bundleWrapper"><script id="text" type="text/x-handlebars-template">
+		{{#if wrapContent}}
+		<div id="textAsset_{{domId}}_WrapperL" style='background-color:transparent;'{{#if role}} role='{{role}}' aria-level='{{headingLevel}}' {{/if}} class="assetWrapperC textAssetWrapperC {{importedStyle}} {{alignment}} {{bgFillClass}} {{instructionText}}">
+			<span data-bind="gomotext: strContent" style='{{bgFillStyle}}'>{{{textContent}}}</span>
+		</div>
+		{{else}}
+		<div id="textAsset_{{domId}}_WrapperL" style='{{bgFillStyle}}'{{#if role}} role='{{role}}' aria-level='{{headingLevel}}' {{/if}} data-bind="gomotext: strContent" class="assetWrapperC textAssetWrapperC {{importedStyle}} {{alignment}} {{bgFillClass}} {{instructionText}}">{{{textContent}}}</div>
+		{{/if}}
+	</script><script id="button" type="text/x-handlebars-template">
+      {{#if objIconImageFilename.decodedSrc}}
+        
+        <div
+          id='buttonAsset_{{domId}}_WrapperL'
+          class='assetWrapperC buttonAssetWrapperC {{strAlignment}}C'
+        >
+          <button
+            type='button'
+            class='buttonC btn btn-default {{buttonStyle}} {{enabledClassname}}'
+            onclick="return EM.trigger('buttonAction',{strType:'buttonText', strAssetID:'{{domId}}', domLink:this})"
+          >
+            <img
+              src='{{objIconImageFilename.decodedSrc}}'
+              data-bind='attr: {src:renderImage.strSrc}'
+            />
+            <span data-bind='gomotext: formattedLabel'>
+              {{{formattedLabel}}}
+            </span>
+          </button>
+        </div>
+      {{else}}
+        
+        <div id='buttonAsset_{{domId}}_WrapperL' class='assetWrapperC buttonAssetWrapperC {{strAlignment}}C'>
+          <button
+            type='button'
+            class='buttonC btn btn-default {{buttonStyle}} {{enabledClassname}}'
+            onclick="return EM.trigger('buttonAction',{strType:'buttonText', strAssetID:'{{domId}}', domLink:this})"
+          >
+            <span data-bind='gomotext: formattedLabel'>
+              {{{formattedLabel}}}
+            </span>
+          </button>
+        </div>
+      {{/if}}
+    </script><script id="image-markers" type="text/x-handlebars-template">
+      <div id="image-markersAsset_{{domId}}_WrapperL" class="assetWrapperC image-markers-wrapper {{strAlignment}}">
+          <img
+            class="image-markers__image"
+            src="{{objNormalSrc.strPathAndSrc}}"
+            title="{{{objNormalSrc.strAltText}}}"
+            alt="{{{objNormalSrc.strAltText}}}"
+            data-bind="attr: { alt:objNormalSrc.strAltText, title:objNormalSrc.strAltText, src:renderImage.strSrc}"
+          >
+          <div
+            class="image-markers__hotspots" 
+            title="{{{objNormalSrc.strAltText}}}"
+            data-bind="attr: { title:objNormalSrc.strAltText}"
+          >
+            {{#each arrHotspots}}
+            <div 
+              role="button"
+              class="image-markers__hotspot image-markers__hotspot-fade"
+              data-hotspot-id="{{strID}}"
+              title='{{{strAltText}}}'
+              alt='{{{strAltText}}}'
+              data-display-state='default'
+              data-bind="attr: {alt:arrHotspots()[{{@index}}].strAltText, title:arrHotspots()[{{@index}}].strAltText}"
+              >
+              
+              <div                
+                class="image-markers__hotspot-icon fa {{strDefaultState}}"
+                data-display-state-name="default">
+              </div>
+              
+              <div
+                class="image-markers__hotspot-icon hidden fa {{strActiveState}}"
+                data-display-state-name="active">
+            </div>
+              
+              <div
+                class="image-markers__hotspot-icon hidden fa {{strVisitedState}}"
+                data-display-state-name="visited">
+            </div>
+          </div>
+            {{/each}}
+          </div>
+        </div>
+    </script><script id="carousel" type="text/x-handlebars-template">
+      <div
+        id='carouselAsset_{{domId}}_WrapperL'
+        class='assetWrapperC carouselAssetWrapperC'
+      >
+      {{#each arrStepData}}
+        <div
+          id='carouselStep_{{strID}}_WrapperL'
+          class='carouselStepWrapperC notVisitedC'
+        >
+        <h2
+          class='carouselStepTitleC {{titleVisibilityClass}}'
+          data-bind='gomotext: arrStepData()[{{@index}}].formattedStrTitle'
+        >
+          {{{formattedStrTitle}}}
+        </h2>
+        <span
+          class='carouselStepContentC {{contentVisibilityClass}}'
+          data-bind='gomotext: arrStepData()[{{@index}}].formattedStrContent'
+        >
+          {{{formattedStrContent}}}
+        </span>
+        <img
+          src='resources/{{objStepSrc.strSrc}}'
+          alt='{{objStepSrc.formattedStrAltText}}'
+          title='{{objStepSrc.formattedStrAltText}}'
+          class='carouselStepImageAssetC carouseltStepImageAssetC'
+          data-bind='attr:{src: renderImages()[{{@index}}].strSrc, alt: renderImages()[{{@index}}].strAltText, title: renderImages()[{{@index}}].strAltText}'
+        />
+      </div>
+      {{/each}}
+      </div>
+    </script><script id="likert" type="text/x-handlebars-template">
+      <div id="likertAsset_{{ domId }}_WrapperL" class="assetWrapperC likertWrapper">
+        {{#questions}}
+        <div data-bind="gomotext: questions()[{{@index}}].strQuestion" class="question-text">
+          {{{strQuestion}}}
+        </div>
+        <div class="likert-wrap">
+          <div id="likert_{{ strID }}" class="likert">
+            <div class="likert-bar"></div>
+            <div class="likert-pips" data-likert-id="likert_{{ strID }}">
+              {{#formattedScaleLabels}}
+              <div class="likert-pip" data-pip-id="{{@index}}"></div>
+              {{/formattedScaleLabels}}
+            </div>
+          </div>
+          <div class="likert-labels" data-likert-id="likert_{{ strID }}">
+            {{#formattedScaleLabels}} {{#if objNormalSrc.strSrc}}
+            <span class="likert-label" title="{{{strOptionText}}}">
+              <img
+                class="likert-label-image"
+                src="{{{objNormalSrc.strSrc}}}"
+                alt="{{{strOptionText}}}"
+                data-bind="attr: { title: formattedScaleLabels()[{{@index}}].strOptionText, alt: formattedScaleLabels()[{{@index}}].strOptionText, src:renderImages()[{{@index}}].strSrc}"
+              />
+            </span>
+            {{else}}
+            <span class="likert-label">
+              <span
+                class="likert-label-text"
+                title="{{{strOptionText}}}"
+                data-bind="gomotext: formattedScaleLabels()[{{@index}}].strOptionText"
+                class="question-text"
+                >{{{strOptionText}}}</span
+              >
+            </span>
+            {{/if}} {{/formattedScaleLabels}}
+          </div>
+        </div>
+        {{/questions}} 
+        {{> confirmButton}} {{> resetButton}}
+      </div>
+    </script></div></body></html>
