@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:global="#local-functions" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Zoomed image holder</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<link rel="stylesheet" type="text/css" href="modules/asset/presentation/image-zoom/files_player/image_zoom_asset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/themes/generic4/css/theme.css"/>
+	<script type="text/javascript">
+		var _htmImageContent = window.opener.ASSET_INTERACTIONS.getCurrentPopupZoomedImageDetails();
+		_htmImageContent = _htmImageContent.replace('onerror="EM.trigger(\'imageLoadFailure\', this)"', '');
+		document.write('<div id="popupZoomImageHolderL">'+_htmImageContent+'</div>');
+	</script>
+</head>
+<body>
+</body>
+</html>

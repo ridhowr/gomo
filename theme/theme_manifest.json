@@ -1,0 +1,9 @@
+{
+  "uuid": "7e051d70-f769-11e6-a13d-0d3059b1d809",
+  "strName": "Duo",
+  "strID": ["duotheme"],
+  "strDescription": "Duo Theme",
+  "strVersion": "1.0",
+  "strManifestType": "theme",
+  "strThumbnail": "duotheme.jpg"
+}
