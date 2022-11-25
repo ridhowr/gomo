@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>&lrm;</title>
+	<meta name="language" content="en" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+	<!-- Meta to make IE vaguely behave. -->
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <!--[!CACHE_CONTROL!]-->
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" type="text/css" href="css/core.css">
+  <script type="text/javascript" src="frameworks/head.min.js"></script>
+  <!-- TODO move this boot.js file when GRK-1228 is ready -->
+  <script type="text/javascript" src="js/player_management/player_loader/boot.js"></script>
+
+</head>
+
+<body onload="loadBaseFiles();">
+
+<!-- OperatingSystem will be set to display block when the Core CSS has loaded -->
+<div id="operatingSystemL" style="display:none">
+	<!-- This will often be blank, it is currently only required for iOS on iPad and would be too expensive timewise to complete for all cases -->
+	<div id="operatingSystemVersionL">
+		<div id="browserTypeL">
+			<div id="browserVersionL">
+				<div id="outputModeL">
+					<div id="masterWrapperL">
+						<div id="injectableBlocksL"></div>
+						<div id="remoteServerIconL" title="LL_LOCAL_DATA_ICON_LL"></div>
+
+						<div id="pageWrapperL" class="shownPageWrapperC">
+							<!-- This div is used to hold the previous background image for a smoother image fade -->
+							<div id="screenBackgroundFadeControlHolderL" ></div>
+							<div id="screenBackgroundHolderL" ></div>
+							<div id="screenHolderL" >
+								<div id="initialLoadingL">
+									<!--<img src="resources/loading.gif" alt="Loading indicator."/>-->
+									<div class="loaderWrapperC">
+										<span class="imgC" ></span>
+										<span><p>Loading...</p></span>
+										<!-- REFACTOR : Make the translation work before Gomo is fully loaded
+										<span><p>LL_LOADING_MESSAGE_LL</p></span>-->
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- This element can be used to put temporary or permanent items not wanted at the page level -->
+						<div id="extensionWrapperL">
+							<div id="outerPopupWrapperL"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="templatesWrapperL" style="display:none">
+
+	<!-- SCREEN TEMPLATES -->
+	<div class="templateFragmentC linearScreenWrapperC">
+		<div id="YY_PREFIX_000_07_YYscreenWrapper_XX_SCREEN_ID_XXL" class="XX_COLOUR_SETTING_XX XX_DEVELOPER_CLASS_XX XX_FONT_SIZE_SETTING_XX linearScreenWrapperC XX_DISPLAY_CONDITION_STATE_XX hiddenScreenC notStartedScreenStateC screenNotInteractedWithC XX_IS_COMPLETABLE_SCREEN_XX XX_OPTIONAL_BACKGROUND_STYLE_XX">
+			<div id="screenLevelBackgroundXX_SCREEN_ID_XXL">XX_SCREEN_VIDEO_BACKGROUND_XX</div>
+			<!-- ScrollMaskingWrapper used to adjust smartphone content position without prohibiting the blanking layer  full screen-->
+			<div class="scrollMaskingWrapperC checkScrollingC">
+				<div class="scrollWrapperC">
+					<div class="screenIDHolderC XX_SCREEN_ID_VISIBILITY_XX" title="LL_SCREEN_ID_TITLE_LL">ID: XX_SCREEN_ID_XX</div>
+					XX_NON_CONTENT_SCREENTITLE_XX
+					<div class="screenContentC">
+						XX_NON_COLUMN_SCREEN_CONTENT_XX
+						XX_SCREEN_CONTENT_XX
+					</div>
+				</div>
+			</div>
+			<div class="blankOffC blankingLayerC"></div>
+			<div class="subScreenCollectionC">XX_SUB_SCREEN_CONTENT_XX</div>
+		</div>
+	</div>
+
+	<div class="templateFragmentC metaScreenWrapperC">
+		<div id="YY_PREFIX_000_08_YYscreenWrapper_XX_SCREEN_ID_XXL" class="XX_COLOUR_SETTING_XX XX_FONT_SIZE_SETTING_XX metaScreenWrapperC hiddenScreenC notStartedScreenStateC screenNotInteractedWithC XX_IS_COMPLETABLE_SCREEN_XX XX_OPTIONAL_BACKGROUND_STYLE_XX">
+			<!-- ScrollMaskingWrapper used to adjust smartphone content position without prohibiting the blanking layer  full screen-->
+			<div class="scrollMaskingWrapperC checkScrollingC">
+				<div class="scrollWrapperC">
+					<div class="screenIDHolderC XX_SCREEN_ID_VISIBILITY_XX" title="LL_SCREEN_ID_TITLE_LL">ID: XX_SCREEN_ID_XX</div>
+					<div class="screenContentC">
+						XX_SCREEN_CONTENT_XX
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="templateFragmentC linearLockedScreenContentC">
+		<div class="linearLockedScreenContentC">
+			<div class="lockedScreenContentC">
+				<div class="glyphicon glyphicon-lock"></div>
+				<div class="lockedScreenMessage">XX_LOCKED_SCREEN_MESSAGE_XX</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="templateFragmentC backgroundVideoC">
+		<video muted autoplay loop id="backgroundVideo">
+			XX_SOURCE_CONTENT_XX
+		</video>
+		XX_PLAY_BUTTON_XX
+	</div>
+
+	<div class="templateFragmentC backgroundVideoScreenLevelC">
+		<video loop id="backgroundVideo_XX_SCREEN_ID_XX" class="screenLevelBackgroundVideo">
+			XX_SOURCE_CONTENT_XX
+		</video>
+		XX_PLAY_BUTTON_XX
+	</div>
+
+	<!-- HEADER ELEMENTS -->
+	<div class="templateFragmentC nonScreenContentHeaderC">
+			<h1 class="screenTitlesC nonScreenContentHeaderC">
+				XX_SCREEN_TITLE_XX
+			</h1>
+	</div>
+
+	<!-- LAYOUT ELEMENTS -->
+	<div class="templateFragmentC layoutBlockC">
+		<div id="XX_LAYOUT_ID_XX" class="row match-cols-height XX_DEVELOPER_CLASS_XX">
+			<!-- ScrollMaskingWrapper used to adjust smartphone content position without prohibiting the blanking layer  full screen-->
+			<!--<div class="scrollMaskingWrapperC checkScrollingC">-->
+				XX_LAYOUT_COLUMNS_XX
+			<!--</div>-->
+		</div>
+	</div>
+
+	<div class="templateFragmentC layoutColumnC">
+		<div id="XX_COLUMN_ID_XX" class="layoutColumnWrapperC col-sm-XX_COLUMN_WIDTH_XX XX_ASSET_CHECK_XX" data-columnindex="XX_COLUMN_INDEX_XX">
+			<div class="layoutColumnC">
+				<!-- ScrollMaskingWrapper used to adjust smartphone content position without prohibiting the blanking layer  full screen-->
+				<!--<div class="scrollMaskingWrapperC checkScrollingC">
+					<div class="scrollWrapperC">-->
+							XX_LAYOUT_COLUMN_ASSET_CONTENT_XX
+					<!--</div>
+				</div>-->
+			</div>
+		</div>
+	</div>
+
+
+	<!-- TOPIC TEMPLATES -->
+	<div class="templateFragmentC linearTopicWrapperC">
+		<div id="YY_PREFIX_001_01_YYpopupWrapperL" class="XX_COLOUR_SETTING_XX"></div>
+		<div id="YY_PREFIX_001_01_YYblankOutL" class="blankingLayerC blankOffC"></div>
+		<div id="YY_PREFIX_001_01_YYloadingL" class="loadingC"></div>
+		XX_TOP_STRAP_XX
+		<div class="leftHandTransitionBLankerC"></div>
+		<div class="rightHandTransitionBLankerC"></div>
+		<div id="YY_PREFIX_001_01_YYcontentWrapperL" class="linearTopicC XX_TRANSITION_TYPE_CLASS_XX XX_CONINUOUS_SCROLLING_CLASS_XX XX_SHOW_LOCKED_SCREEN_PLACEHOLDER_XX" role="main">
+			<div id="contentWrapperInnerL">
+				XX_SCREENS_XX
+			</div>
+		</div>
+		XX_TOPIC_NAV_XX
+	</div>
+
+	<div class="templateFragmentC metaTopicWrapperC">
+		<div
+			id="metaContentWrapperL"
+			class="metaTopicC XX_META_TYPE_XXMetaC XX_TRANSITION_TYPE_CLASS_XX XX_CONINUOUS_SCROLLING_CLASS_XX"
+			data-bind="disableBindings: true"
+			role="dialog"
+			tabindex="-1"
+		>
+			<span class="localisationWrapper">
+				<a id="YY_PREFIX_000_00_YYcloseMetaPopupL" href="?still" onclick="return EM.trigger('closePopup', {'strPopupID':'XX_ID_TYPE_XX'});" class="addColourSettingsBorderC darkCloseButtonC" title="LOCALISED_TRANSLATION" data-bind="attr: { title:META_TOPIC_POPUP_CLOSE_BUTTON_TITLE}"><span class="altColoursCloseCrossC">X</span>
+					<span class="closeButtonTextC" data-bind="gomotext: META_TOPIC_POPUP_CLOSE_BUTTON_TEXT">LOCALISED_TRANSLATION</span></a>
+				<div id="contentWrapperInnerL">
+					<span data-bind="disableBindings: true">
+						XX_SCREENS_XX
+					</span>
+				</div>
+			</span>
+		</div>
+	</div>
+
+	<!-- SUB SCREEN TEMPLATES -->
+	<div class="templateFragmentC genericSubScreenWrapperC">
+		<div id="YY_PREFIX_000_01_YYsubScreenWrapper_XX_SUB_SCREEN_ID_XXL" class="genericSubScreenWrapperC hiddenSubScreenC subScreenWrapperC XX_DEVELOPER_CLASS_XX" role="dialog" aria-label="XX_SUB_SCREEN_TITLE_XX" data-bind="disableBindings: true" tabindex="-1">
+			<span class="subscreenLocalisationWrapper">
+				<a href="?still" class="subScreenCloseButtonC addColourSettingsBorderC lightCloseButtonC" onclick="return EM.trigger('closeSubScreen', {'strSubScreenID':'XX_SUB_SCREEN_ID_XX'})" title="LOCALISED_TRANSLATION" data-bind="attr: { title:SUBSCREEN_CLOSE_TITLE}"><span class="altColoursCloseCrossC">X</span><span class="closeButtonTextC" data-bind="gomotext: SUBSCREEN_CLOSE_TEXT">LOCALISED_TRANSLATION</span></a>
+			</span>
+			<div id="YY_PREFIX_000_00_YYsubScreenContent_XX_SUB_SCREEN_ID_XXL" class="subScreenContentC XX_COLOUR_SETTING_XX XX_FONT_SIZE_SETTING_XX addColourSettingsBorderC checkScrollingC">
+				<div class="scrollWrapperC">
+					<span data-bind="disableBindings: true" class="disableFurtherBinding">
+						XX_SUB_SCREEN_CONTENT_XX
+					</span>
+				</div>
+			</div>
+		</div>
+  </div>
+  
+  <div class="templateFragmentC consumedSubScreenWrapperC">
+		<div id="YY_PREFIX_000_01_YYsubScreenWrapper_XX_SUB_SCREEN_ID_XXL" class="genericSubScreenWrapperC hiddenSubScreenC subScreenWrapperC XX_DEVELOPER_CLASS_XX" data-bind="disableBindings: true" tabindex="-1">
+			<span class="subscreenLocalisationWrapper">
+				<a href="?still" class="subScreenCloseButtonC addColourSettingsBorderC lightCloseButtonC" onclick="return EM.trigger('closeSubScreen', {'strSubScreenID':'XX_SUB_SCREEN_ID_XX'})" title="LOCALISED_TRANSLATION" data-bind="attr: { title:SUBSCREEN_CLOSE_TITLE}"><span class="altColoursCloseCrossC">X</span><span class="closeButtonTextC" data-bind="gomotext: SUBSCREEN_CLOSE_TEXT">LOCALISED_TRANSLATION</span></a>
+			</span>
+			<div id="YY_PREFIX_000_00_YYsubScreenContent_XX_SUB_SCREEN_ID_XXL" class="subScreenContentC XX_COLOUR_SETTING_XX XX_FONT_SIZE_SETTING_XX addColourSettingsBorderC checkScrollingC">
+				<div class="scrollWrapperC">
+					<span data-bind="disableBindings: true" class="disableFurtherBinding">
+						XX_SUB_SCREEN_CONTENT_XX
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="templateFragmentC genericSubScreenWrapperC accessibleC">
+		<div id="YY_PREFIX_000_02_YYsubScreenWrapper_XX_SUB_SCREEN_ID_XXL" class="genericSubScreenWrapperC hiddenSubScreenC subScreenWrapperC XX_DEVELOPER_CLASS_XX" role="dialog" aria-label="XX_SUB_SCREEN_TITLE_XX" data-bind="disableBindings: true" tabindex="-1">
+			<span class="subscreenLocalisationWrapper">
+				<a id="YY_PREFIX_000_02_YYcloseButtonFor_XX_PARENT_ASSET_ID_XX_L" href="?still" class="subScreenCloseButtonC addColourSettingsBorderC lightCloseButtonC" onclick="return EM.trigger('closeSubScreen', {'strSubScreenID':'XX_SUB_SCREEN_ID_XX'})" title="LOCALISED_TRANSLATION" data-bind="attr: { title:SUBSCREEN_CLOSE_TITLE_ACCESSIBLE}"><span class="altColoursCloseCrossC">X</span><span class="closeButtonTextC" data-bind="gomotext: SUBSCREEN_CLOSE_TEXT">LOCALISED_TRANSLATION</span></a>
+			</span>
+			<div id="YY_PREFIX_000_00_YYsubScreenContent_XX_SUB_SCREEN_ID_XXL" class="subScreenContentC XX_COLOUR_SETTING_XX XX_FONT_SIZE_SETTING_XX addColourSettingsBorderC">
+				<div class="scrollWrapperC">
+					<span data-bind="disableBindings: true" class="disableFurtherBinding">
+						XX_SUB_SCREEN_CONTENT_XX
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ALERT TEMPLATE -->
+	<div class="templateFragmentC alertWrapperC">
+		<div id="{{elId}}" class="alert-box alert alert-box--{{alertType}}" role="alert" data-reference="{{gomoReference}}">
+			<div class="alert-box__body">
+				<div class="alert-box__column alert-box__column--left">
+					<i class="alert-box__icon"></i>
+				</div>
+				<div class="alert-box__column alert-box__column--right">
+					{{#title}}
+						<h4 class="alert-box__title">{{{title}}}</h4>
+					{{/title}}
+					{{#message}}
+						<p class="alert-box__text">{{{message}}}</p>
+					{{/message}}
+				</div>
+			</div>
+			<div class="alert-box__footer">
+				{{#buttons}}
+					<button type="button" class="btn alert-box__button alert-box__button--{{type}}">
+						{{{label}}}
+					</button>
+				{{/buttons}}
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="templateFragmentC popupSubScreenWrapperC">
+		<div class="modal fade subScreenWrapperC XX_DEVELOPER_CLASS_XX" id="YY_PREFIX_000_03_YYsubScreenWrapper_XX_SUB_SCREEN_ID_XXL" tabindex="-1" role="dialog" aria-label="XX_SUB_SCREEN_TITLE_XX" aria-hidden="true"  data-bind="disableBindings: true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header subscreenLocalisationWrapper">
+						<a href="?still" class="subScreenCloseButtonC addColourSettingsBorderC lightCloseButtonC" onclick="return EM.trigger('closeSubScreen', {'strSubScreenID':'XX_SUB_SCREEN_ID_XX'})" title="LOCALISED_TRANSLATION" data-bind="attr: { title:SUBSCREEN_CLOSE_TITLE}"><span class="altColoursCloseCrossC">X</span><span class="closeButtonTextC" data-bind="gomotext: SUBSCREEN_CLOSE_TEXT">LOCALISED_TRANSLATION</span></a>
+					</div>
+					<div id="YY_PREFIX_000_00_YYsubScreenContent_XX_SUB_SCREEN_ID_XXL" class="modal-body">
+						<span data-bind="disableBindings: true" class="disableFurtherBinding">
+							XX_SUB_SCREEN_CONTENT_XX
+						</span>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</div>
+
+	<!-- Popover/Balloon -->
+	<div class="templateFragmentC popoverSubScreenWrapperC">
+		<div id="YY_PREFIX_000_02_YYsubScreenWrapper_XX_SUB_SCREEN_ID_XXL" class="balloonSubScreenWrapperC subScreenWrapperC screenNotInteractedWithC completableScreenC XX_DEVELOPER_CLASS_XX"  role="dialog" aria-label="XX_SUB_SCREEN_TITLE_XX" data-bind="disableBindings: true" tabindex="-1">
+			<span class="subscreenLocalisationWrapper">
+				<a href="?still" class="subScreenCloseButtonC addColourSettingsBorderC lightCloseButtonC" onclick="return EM.trigger('closeSubScreen', {'strSubScreenID':'XX_SUB_SCREEN_ID_XX'})" title="LOCALISED_TRANSLATION" data-bind="attr: { title:SUBSCREEN_CLOSE_TITLE}"><span class="altColoursCloseCrossC">X</span><span class="closeButtonTextC" data-bind="gomotext: SUBSCREEN_CLOSE_TEXT">LOCALISED_TRANSLATION</span></a>
+			</span>
+			<div id="YY_PREFIX_000_00_YYsubScreenContent_XX_SUB_SCREEN_ID_XXL" class="balloon-body">
+				<span data-bind="disableBindings: true" class="disableFurtherBinding">
+					XX_SUB_SCREEN_CONTENT_XX
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- ROW TEMPLATES -->
+	<div class="templateFragmentC standardRowC">
+		<div class="screenRowC notFirstRowC XX_LAST_ROW_CLASS_XX XX_DEVELOPER_CLASS_XX">
+			XX_ROW_CONTENT_XX
+			<span class="stretchC"></span>
+		</div>
+	</div>
+
+	<div class="templateFragmentC firstRowWithTitleC">
+		<div class="screenRowC firstRowC XX_DEVELOPER_CLASS_XX">
+			<h1 class="screenTitlesC XX_SCREEN_TITLE_VISIBILITY_XX">XX_SCREEN_TITLE_XX</h1>
+			XX_ROW_CONTENT_XX
+			<span class="stretchC"></span>
+		</div>
+	</div>
+
+
+	<div class="templateFragmentC firstRowC">
+		<div class="screenRowC firstRowC XX_DEVELOPER_CLASS_XX">
+			XX_ROW_CONTENT_XX
+			<span class="stretchC"></span>
+		</div>
+	</div>
+
+	<!-- COLUMN TEMPLATES -->
+	<div class="templateFragmentC standardColumnC">
+		<div class="screenColumnC notFirstColumnC XX_COLUMN_TYPE_CLASS_XX XX_LAST_COLUMN_CLASS_XX genericBackgroundColourC">
+			XX_COLUMN_CONTENT_XX
+		</div>
+	</div>
+
+	<div class="templateFragmentC firstColumnC">
+		<div class="screenColumnC firstColumnC XX_COLUMN_TYPE_CLASS_XX XX_LAST_COLUMN_CLASS_XX genericBackgroundColourC">
+			XX_COLUMN_CONTENT_XX
+		</div>
+	</div>
+
+	<div class="templateFragmentC firstColumnOfFirstRowNoScreenTitleC">
+		<div class="screenColumnC firstColumnC XX_COLUMN_TYPE_CLASS_XX XX_LAST_COLUMN_CLASS_XX genericBackgroundColourC">
+			XX_COLUMN_CONTENT_XX
+		</div>
+	</div>
+
+	<div class="templateFragmentC firstColumnOfFirstRowC">
+		<div class="screenColumnC firstColumnC XX_COLUMN_TYPE_CLASS_XX XX_LAST_COLUMN_CLASS_XX genericBackgroundColourC">
+			<h1 class="screenTitlesC XX_SCREEN_TITLE_VISIBILITY_XX">XX_SCREEN_TITLE_XX</h1>
+		</div>
+	</div>
+
+	<div class="templateFragmentC blankScreenColumnC">
+		<div class="blankScreenColumnC XX_COLUMN_TYPE_CLASS_XX XX_LAST_COLUMN_CLASS_XX genericBackgroundColourC"></div>
+	</div>
+
+	<div class="templateFragmentC blankScreenColumnWithTitleC">
+		<div class="blankScreenColumnWithTitleC XX_COLUMN_TYPE_CLASS_XX XX_LAST_COLUMN_CLASS_XX genericBackgroundColourC">
+			<h1 class="screenTitlesC XX_SCREEN_TITLE_VISIBILITY_XX">XX_SCREEN_TITLE_XX</h1>
+		</div>
+	</div>
+
+	<!-- NAV TEMPLATES -->
+	<div class="templateFragmentC navWrapperTemplateC">
+		<div role="navigation" id="YY_PREFIX_000_00_YYroleNavigationButtonWrapperL">
+			XX_SCREEN_NAVIGATION_XX
+		</div>
+		<div id="YY_PREFIX_000_00_YYnavWrapperL" class="footer XX_NAVIGATION_TYPE_XXNavC XX_FONT_SIZE_SETTING_XX XX_TRANSITION_TYPE_CLASS_XX XX_STRAP_STYLE_XX" role="contentinfo">
+			<div class="navWrapperTopBannerC strapBannerTop"></div>
+			<div class="navElementsC footer__wrapper">
+				<span class="togglePopupNavC" onclick="return EM.trigger('togglePopupNav')"></span>
+				<span class="coreNavElementsC footer__content">
+					<div class="footer__logo" alt="LL_FOOTER_LOGO_ALT_TEXT_LL"></div>
+					<span id="coreNavElementsWrapperL" class="strapControls footer__controls">
+						XX_CONTROLS_XX
+					</span>
+				</span>
+			</div>
+			<div class="navWrapperBottomBannerC strapBannerBottom"></div>
+		</div>
+	</div>
+
+	<div class="templateFragmentC navWrapperWithNoFooterTemplateC">
+		<nav id="navWrapperL" class="screen-nav" aria-label="Topic screen">
+			{{{screenNavHtml}}}
+		</nav>
+	</div>
+
+	<div class="templateFragmentC navWrapperTemplateC smallC">
+		<div role="navigation" id="YY_PREFIX_000_01_YYroleNavigationButtonWrapperL">
+			XX_SCREEN_NAVIGATION_XX
+		</div>
+		<div id="YY_PREFIX_000_01_YYnavWrapperL" class="XX_NAVIGATION_TYPE_XXNavC XX_FONT_SIZE_SETTING_XX XX_TRANSITION_TYPE_CLASS_XX XX_STRAP_STYLE_XX" role="contentinfo">
+			<div class="navWrapperTopBannerC strapBannerTop"></div>
+			<div class="navElementsC">
+				<span class="coreNavElementsC">
+					<span id="coreNavElementsWrapperL" class="strapControls">
+						XX_CONTROLS_XX
+					</span>
+				</span>
+			</div>
+			<div class="navWrapperBottomBannerC strapBannerBottom"></div>
+		</div>
+	</div>
+
+	<div class="templateFragmentC navSvgIconC">
+		<span xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+			<use xlink:href="resources/svg_icons/svg_spritesheet.svg#{{id}}" id="{{id}}"></use>
+		</span>
+	</div>
+
+	<div class="templateFragmentC navAlternativeSvgIconC">
+		<span xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+			<use xlink:href="resources/svg_icons/svg_spritesheet.svg#{{alternative.svgId}}" id="{{alternative.svgId}}"></use>
+		</span>
+	</div>
+
+	<!-- NOTE: This is meant to be empty; it saves on having a seperate set of nav. definitions for tablet. -->
+	<div class="templateFragmentC versionTemplateC tabletC"></div>
+	<div class="templateFragmentC versionTemplateC smartphoneC"></div>
+
+	<!-- TOP STRAP TEMPLATES -->
+	<div class="templateFragmentC linearTopicTopStrapC">
+		<div id="YY_PREFIX_000_00_YYtopStrapL" class="header linearTopicTopStrapC XX_STRAP_STYLE_XX" role="banner">
+			<div class="strapBannerTop"></div>
+			<div class="header__logo" alt="LL_HEADER_LOGO_ALT_TEXT_LL"></div>
+			<div class="strapControls header__controls">
+				XX_CONTROLS_XX
+			</div>
+			<div class="strapBannerBottom"></div>
+		</div>
+		XX_RELOAD_PAGE_BUTTON_XX
+	</div>
+
+	<div class="templateFragmentC linearTopicTopStrapC smartphoneC">
+		<div id="YY_PREFIX_000_01_YYtopStrapL" class="linearTopicTopStrapC XX_STRAP_STYLE_XX" role="banner">
+			<div class="strapBannerTop"></div>
+			<div class="strapControls">
+				XX_CONTROLS_XX
+			</div>
+			<div class="strapBannerBottom"></div>
+		</div>
+		XX_RELOAD_PAGE_BUTTON_XX
+	</div>
+
+	<div class="templateFragmentC controlsListTemplateC">
+		{{#controls}}
+		{{#containerStart}}
+			<div class="{{containerStart}}">
+		{{/containerStart}}
+		<div id="{{prefix}}Control{{index}}" class="control" aria-hidden="{{{hidden}}}">
+			{{{html}}}
+		</div>
+		{{#containerEnd}}
+			</div>
+		{{/containerEnd}}
+		{{/controls}}
+	</div>
+
+	<!-- Split header templates -->
+	<div class="templateFragmentC splitHeaderPlaceholder">
+		<div id="YY_PREFIX_000_01_YYtopStrapL"></div>
+	</div>
+
+	<div class="templateFragmentC splitHeader">
+		<div class="header header--{{id}}" role="banner">
+			{{#controls}}
+				<div class="header__control">
+					{{{html}}}
+				</div>
+			{{/controls}}
+		</div>
+	</div>
+
+	<div class="templateFragmentC logoTemplateC">
+		<img id="YY_PREFIX_000_01_YYlogoHolderL" class="logoHolderC" src="resources/trans.gif?XX_LOGO_SRC_XX" alt="XX_LOGO_ALT_TEXT_XX" />
+	</div>
+
+	<!-- Joint header template -->
+	<div class="templateFragmentC jointHeader">
+		<header class="header header--joint{{#headerHidden}} header--hidden" aria-hidden="true{{/headerHidden}}" role="banner">
+			{{#hasHeaderControls}}
+				<section class="header__controls header__controls--left">
+					{{#headerControls}}
+						<div class="header__control" aria-hidden="{{{hidden}}}">
+							{{{html}}}
+						</div>
+					{{/headerControls}}
+				</section>
+			{{/hasHeaderControls}}
+			{{#hasFooterControls}}
+				<section class="header__controls header__controls--right">
+					{{#footerControls}}
+						<div class="header__control" aria-hidden="{{{hidden}}}">
+							{{{html}}}
+						</div>
+					{{/footerControls}}
+				</section>
+			{{/hasFooterControls}}
+		</header>
+	</div>
+
+	<!-- Drawer menu -->
+	<div class="templateFragmentC drawerMenu">
+		<div class="drawer-menu__bar">
+			<div class="drawer-menu__logo drawer-menu__logo--bar"></div>
+			<div class="drawer-menu__open-button">
+				<i class="fa fa-bars"></i>
+			</div>
+			{{#headerPageCountControl}}
+				<div class="drawer-menu__page-count">
+					{{{headerPageCountControl}}}
+				</div>
+			{{/headerPageCountControl}}
+		</div>
+		<div class="drawer-menu drawer-menu--hidden">
+			<div class="drawer-menu__header">
+				<div class="drawer-menu__logo drawer-menu__logo--header"></div>
+				{{^tileView}}
+					{{#headerControls}}
+						<div class="drawer-menu__control drawer-menu__control--header">
+							{{{html}}}
+						</div>
+					{{/headerControls}}
+				{{/tileView}}
+				<div class="drawer-menu__control drawer-menu__control--close-button drawer-menu__control--header">
+					<button class="drawer-menu__close-button">
+						<i class="fa fa-times"></i>
+					</button>
+				</div>
+			</div>
+			{{#tileView}}
+				<div class="drawer-menu__nav-tiles">
+					{{#headerControls}}
+						<div class="drawer-menu__control drawer-menu__control--tile">
+							{{{html}}}
+						</div>
+					{{/headerControls}}
+					{{#footerControls}}
+						<div class="drawer-menu__control drawer-menu__control--tile">
+							{{{html}}}
+						</div>
+					{{/footerControls}}
+				</div>
+			{{/tileView}}
+			{{^tileView}}
+				<div class="drawer-menu__topics">
+					{{#topicsList}}
+					<button
+						class="drawer-menu__topic-button drawer-menu__topic-button--{{topicType}}"
+						data-topicid="{{strTopicID}}"
+						>
+						<span>{{title}}</span>
+					</button>
+					{{/topicsList}}
+				</div>
+			{{/tileView}}
+			<div class="drawer-menu__footer">
+				<div class="drawer-menu__logo drawer-menu__logo--footer"></div>
+				{{^tileView}}
+					{{#footerControls}}
+						<div class="drawer-menu__control drawer-menu__control--footer">
+							{{{html}}}
+						</div>
+					{{/footerControls}}
+				{{/tileView}}
+			</div>
+		</div>
+	</div>
+
+	<div class="templateFragmentC screenNav">
+		<div role="navigation" id="roleNavigationButtonWrapperL" class="screen-navigation">
+			{{{screenNavHtml}}}
+		</div>
+	</div>
+
+	<!-- ASSET CONTENT FRAGMENTS -->
+	<!-- REFACTOR NOTE: This is a placeholder for later functionality, to whit co-ordinate or class based positioning -->
+	<div class="templateFragmentC assetContentWrapperC">
+		<div id="YY_PREFIX_000_00_YYassetWrapperFor_XX_ASSET_ID_XX_L" class="genericAssetWrapperC XX_FORCE_ASSET_OUTPUT_MODE_XX XX_ASSET_POSITIONING_XX XX_DEVELOPER_CLASS_XX XX_DISPLAY_CONDITION_STATE_XX">XX_ASSET_CONTENT_XX</div>
+	</div>
+
+	<div class="templateFragmentC newAssetContentWrapperC">
+		<div id="assetWrapperFor_{{objRawData.domId}}_L" class="genericAssetWrapperC {{forceOutputModeClass}} {{assetPositionClass}} {{developerClass}} {{displayConditionClass}}" style="{{inlineStyle}}">
+			{{#booIsDisplayed}}
+				{{{asset}}}
+				<span class="blankingElementC"></span>
+			{{/booIsDisplayed}}
+		</div>
+	</div>
+
+	<!-- GENERIC COMPONENTS -->
+	<div class="templateFragmentC noflashwarningC">
+		<span data-bind="disableBindings: true">
+			<div id="YY_PREFIX_000_00_YYnoFlashWarningL" class="defaultTextC localisationWrapper">
+				<p data-bind="gomotext: GENERIC_NO_FLASH_WARNING_TEXT">
+					LOCALISED_TRANSLATION<br/>
+					<a title="LOCALISED_TRANSLATION" href="http://www.adobe.com/go/getflashplayer" data-bind="attr: { title:GET_FLASH_LINK_TITLE}, gomotext: GET_FLASH_LINK_TEXT">LOCALISED_TRANSLATION</a>
+				</p>
+			</div>
+		</span>
+	</div>
+
+	<div class="confirmButtonPartial">
+		<span data-bind="disableBindings: true">
+			<a href="?still" role='button' class="contentButtonNormC activeOptionButtonC activeButtonC visibleButtonC confirmButtonC XX_PARENT_ASSET_TYPE_XXConfirmButtonC addColourSettingsBorderC localisationWrapper" onclick="return false" title="LOCALISED_TRANSLATION" data-bind="attr: { title:CONFIRM_BUTTON_TITLE}">
+				<span class="buttonTextC" data-bind="gomotext: CONFIRM_BUTTON_TEXT">LOCALISED_TRANSLATION</span>
+			</a>
+		</span>
+	</div>
+
+	<div class="resetButtonPartial">
+		<span data-bind="disableBindings: true">
+			<a href="?still" class="contentButtonNormC activeOptionButtonC activeButtonC hiddenButtonC resetButtonC XX_PARENT_ASSET_TYPE_XXResetButtonC addColourSettingsBorderC localisationWrapper" onclick="return false" title="LOCALISED_TRANSLATION" data-bind="attr: { title:RESET_BUTTON_TITLE}">
+				<span class="buttonTextC" data-bind="gomotext: RESET_BUTTON_TEXT">LOCALISED_TRANSLATION</span>
+			</a>
+		</span>
+	</div>
+
+	<!-- START - Delete this set of elements after question assets update task is complete /GA-2329
+	And delete ASSET_RENDER._populateSubAssetTemplatesObject() and associated calls/data
+	-->
+	<div class="templateFragmentC confirmButtonC">
+		<span data-bind="disableBindings: true">
+			<a href="?still" role='button' class="contentButtonNormC activeOptionButtonC activeButtonC XX_CONFIRM_STATE_INITIAL_XX confirmButtonC XX_PARENT_ASSET_TYPE_XXConfirmButtonC addColourSettingsBorderC localisationWrapper" onclick="return EM.trigger('XX_PARENT_ASSET_TYPE_XXConfirmButtonClicked', 'XX_PARENT_ASSET_ID_XX')" title="LOCALISED_TRANSLATION" data-bind="attr: { title:CONFIRM_BUTTON_TITLE}">
+				<span class="buttonTextC" data-bind="gomotext: CONFIRM_BUTTON_TEXT">LOCALISED_TRANSLATION</span>
+			</a>
+		</span>
+	</div>
+
+	<div class="templateFragmentC resetButtonC">
+		<span data-bind="disableBindings: true">
+			<a href="?still" class="contentButtonNormC activeOptionButtonC activeButtonC hiddenButtonC resetButtonC XX_PARENT_ASSET_TYPE_XXResetButtonC addColourSettingsBorderC localisationWrapper" onclick="return EM.trigger('resetAssetButtonClicked', {strAssetID:'XX_PARENT_ASSET_ID_XX', strAssetType:'XX_PARENT_ASSET_TYPE_XX'})" title="LOCALISED_TRANSLATION" data-bind="attr: { title:RESET_BUTTON_TITLE}">
+				<span class="buttonTextC" data-bind="gomotext: RESET_BUTTON_TEXT">LOCALISED_TRANSLATION</span>
+			</a>
+		</span>
+	</div>
+
+	<div class="templateFragmentC modelAnswerButtonC">
+		<span data-bind="disableBindings: true">
+			<a href="?still" class="contentButtonNormC activeButtonC hiddenButtonC modelAnswerButtonC XX_PARENT_ASSET_TYPE_XXModelAnswerButtonC addColourSettingsBorderC localisationWrapper" onclick="return EM.trigger('modelAnswerAssetButtonClicked', {strAssetID:'XX_PARENT_ASSET_ID_XX', strAssetType:'XX_PARENT_ASSET_TYPE_XX'})" title="LOCALISED_TRANSLATION" data-bind="attr: { title:MODEL_ANSWER_BUTTON_TITLE}">
+				<span class="buttonTextC" data-bind="gomotext: MODEL_ANSWER_BUTTON_TEXT">LOCALISED_TRANSLATION</span>
+			</a>
+		</span>
+	</div>
+
+	<div class="templateFragmentC myAnswerButtonC">
+		<span data-bind="disableBindings: true">
+			<a href="?still" class="contentButtonNormC activeButtonC hiddenButtonC myAnswerButtonC XX_PARENT_ASSET_TYPE_XXMyAnswerButtonC addColourSettingsBorderC localisationWrapper" onclick="return EM.trigger('myAnswerAssetButtonClicked', {strAssetID:'XX_PARENT_ASSET_ID_XX', strAssetType:'XX_PARENT_ASSET_TYPE_XX'})" title="LOCALISED_TRANSLATION" data-bind="attr: { title:MY_ANSWER_BUTTON_TITLE}">
+				<span class="buttonTextC" data-bind="gomotext: MY_ANSWER_BUTTON_TEXT">LOCALISED_TRANSLATION</span>
+			</a>
+		</span>
+	</div>
+	<!-- END - Delete this set of elements -->
+
+	<div class="templateFragmentC correctOptionMarkerC">
+		<span class="correctOptionMarkerC" title="LL_CORRECTION_OPTION_INDICATOR_TITLE_LL">!!!</span>
+	</div>
+
+
+
+	<div class="templateFragmentC reloadPageButtonC">
+		<span data-bind="disableBindings: true">
+			<div id="YY_PREFIX_000_00_YYreloadPageButtonHolderL"><a href="?still" class="buttonNormC activeButtonC reloadPageButtonC addColourSettingsBorderC localisationWrapper" onclick="return EM.trigger('refreshPage', false);" title="LOCALISED_TRANSLATION" data-bind="attr: { title:RELOAD_PAGE_BUTTON_TITLE}">
+				<span class="buttonTextC" data-bind="gomotext: RELOAD_PAGE_BUTTON_TEXT">LOCALISED_TRANSLATION</span>
+			</a></div>
+		</span>
+	</div>
+
+	<div class="templateFragmentC reloadPageButtonC smartphoneC">
+		<span data-bind="disableBindings: true">
+			<div id="YY_PREFIX_001_00_YYreloadPageButtonHolderL"><a href="?still" class="buttonNormC activeButtonC reloadPageButtonC addColourSettingsBorderC localisationWrapper" onclick="return EM.trigger('refreshPage', false);" title="LOCALISED_TRANSLATION" data-bind="attr: { title:RELOAD_PAGE_BUTTON_TEXT_SMARTPHONE}">
+				<span class="buttonTextC" data-bind="gomotext: RELOAD_PAGE_BUTTON_TEXT_SMARTPHONE">LOCALISED_TRANSLATION</span>
+			</a></div>
+		</span>
+	</div>
+
+</div>
+
+</body>
+</html>
