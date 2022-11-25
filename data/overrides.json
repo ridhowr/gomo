@@ -1,0 +1,36 @@
+{
+    "themeCustomisation": {
+        "INTERACTIVE_BLANKER": false,
+        "MATCH_COLUMN_HEIGHT": true,
+        "BOO_SHOW_TOPIC_TITLE": false,
+        "BOO_SHOW_SCREEN_TITLE": false,
+        "BOO_SHOW_TOPIC_TITLE_PRIMARYTOPIC": false,
+        "BOO_SHOW_SCREEN_TITLE_PRIMARYTOPIC": false,
+        "BOO_SHOW_TOPIC_TITLE_MENUTOPIC": false,
+        "BOO_SHOW_SCREEN_TITLE_MENUTOPIC": false,
+        "BOO_SHOW_CORRECTNESS_ICONS_ON_CONFIRM_CLICK": true,
+        "BOO_SHOW_LOCKED_SCREEN_PLACEHOLDER": false,
+        "STR_TRANSITION_TYPE": "horizontalSlide",
+        "BOO_ANIMATE_ASSETS_EVERY_VISIT": false,
+        "VIDEO_FULLWINDOW_MODE": "screen"
+    },
+    "disabledMetaTopics": [
+        "extra-menu",
+        "extra-help",
+        "extra-glossary",
+        "extra-accessible",
+        "extra-credits",
+        "extra-resources",
+        "extra-language-selector",
+        "extra-exit",
+        "extra-settings",
+        "extra-progress_bar",
+        "extra-table-of-contents",
+        "extra-search",
+        "extra-jlr-menu"
+    ],
+    "nav": {
+        "BOO_INCLUDE_EXIT_ON_NAV": false,
+        "BOO_INCLUDE_ACCESSIBLE_ON_NAV": false
+    }
+}

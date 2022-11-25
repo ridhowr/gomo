@@ -1,0 +1,12 @@
+{
+    "files": [
+        {
+            "strFile": "localisation_en_GB_data_json_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveTopicContentData"
+            ],
+            "booLoadRequested": false
+        }
+    ]
+}

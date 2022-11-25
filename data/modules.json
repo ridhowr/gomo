@@ -1,0 +1,268 @@
+{
+    "files": [
+        {
+            "strFile": "core-api/animator-interface/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/animator-interface-2/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/blanker/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/iscroll/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/last-page-visited/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/local-storage-interface/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/swipe-control/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/variables-holder/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/back/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/next/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/progress_bar/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/user-registration/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/tab-manager/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/connection-checker/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/animator-interface/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/animator-interface-2/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/blanker/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/iscroll/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/last-page-visited/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/local-storage-interface/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/swipe-control/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/variables-holder/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/back/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/next/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/progress_bar/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/user-registration/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/tab-manager/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/connection-checker/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/table-of-contents/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "core-api/exit/extra_manifest.js",
+            "strType": "extra-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/text/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/image-hotspot/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/image-static/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/rule/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/button/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/image-markers/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/comic-strip/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/carousel/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "presentation/menu-button/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "question/mcq/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "question/likert/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "question/sfl/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "question/assessment-results/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        },
+        {
+            "strFile": "question/text-input/files_player/manifest.js",
+            "strType": "asset-manifest",
+            "booLoadRequested": false,
+            "funBooConditionalLoader": null
+        }
+    ]
+}

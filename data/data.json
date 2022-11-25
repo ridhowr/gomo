@@ -1,0 +1,132 @@
+{
+    "files": [
+        {
+            "strFile": "course_structure_json_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "resource_metadata_json_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "variables_json_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "learning_objectives_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127602_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127603_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127604_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127605_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127606_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127607_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127608_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127609_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127610_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127611_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127612_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        },
+        {
+            "strFile": "content_1127613_data.js",
+            "strType": "player-data",
+            "arrDataLoadHandlers": [
+                "recieveDataTemplates"
+            ],
+            "booLoadRequested": false
+        }
+    ]
+}
